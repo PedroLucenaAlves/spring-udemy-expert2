@@ -45,4 +45,11 @@ public class Carro {
     public void setMontadora(Montadora montadora) {
         this.montadora = montadora;
     }
+
+    public CarroStatusDTO darIgnicao(Chave chave) {
+        if(chave.getMontadora() != this.montadora){
+            return new CarroStatusDTO("Não é possível iniciar o carro com chaves de montadoras diferentes");
+        }
+        return new CarroStatusDTO("Carro ligado. Rodando com o motor " + motor);
+    }
 }
